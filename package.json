@@ -2,6 +2,8 @@
   "name": "astro-resume-cv",
   "type": "module",
   "version": "0.0.1",
+  "author": "Yue-plus <Yue_plus@foxmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -10,6 +12,8 @@
   },
   "dependencies": {
     "@astrojs/ts-plugin": "^1.10.5",
-    "astro": "^5.16.0"
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.16.0",
+    "tailwindcss": "^4.1.17"
   }
 }
