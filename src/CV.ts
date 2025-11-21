@@ -2,7 +2,7 @@
 export const NAME: string = "刘悦阳";
 
 /** 手机号 */
-export const PHONE: string = "+86 1xx xxxx xxxx";
+export const PHONE: string = "+86 1** **** ****";
 
 /** 邮箱 */
 export const EMAIL: string = "Yue_pus@foxmail.com";

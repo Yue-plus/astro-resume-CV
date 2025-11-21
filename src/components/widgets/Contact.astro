@@ -11,9 +11,11 @@ import Tag from "./Tag.astro";
 ---
 
 <div class="flex flex-col gap-1.5 items-stretch">
-    <Tag label="邮箱">{EMAIL}</Tag>
-    <!-- <Tag label="手机">
-        {PHONE}
+    <Tag key="邮箱" value={EMAIL}>
+        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+    </Tag>
+    <Tag key="手机" value={PHONE}>
+        <a href={`tel:${PHONE}`}>{PHONE}</a>
         {
             (CAN_ADD_WEIXIN_FRIEND_BY_PHONE || CAN_ADD_QQ_FRIEND_BY_PHONE) && (
                 <small>
@@ -22,7 +24,7 @@ import Tag from "./Tag.astro";
                 </small>
             )
         }
-    </Tag> -->
-    {!CAN_ADD_QQ_FRIEND_BY_PHONE && <Tag label="QQ">{QQ_ID}</Tag>}
-    {!CAN_ADD_WEIXIN_FRIEND_BY_PHONE && <Tag label="微信号">{WEIXIN_ID}</Tag>}
+    </Tag>
+    {!CAN_ADD_QQ_FRIEND_BY_PHONE && <Tag key="QQ" value={QQ_ID} />}
+    {!CAN_ADD_WEIXIN_FRIEND_BY_PHONE && <Tag key="微信号" value={WEIXIN_ID} />}
 </div>

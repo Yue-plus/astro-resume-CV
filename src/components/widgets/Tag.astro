@@ -1,14 +1,30 @@
 ---
 interface Props {
-    label: string;
+    key: string;
+    value: string;
 }
 
-const { label } = Astro.props;
+const { key, value } = Astro.props;
 ---
 
 <div class="h-full flex leading-5 font-sans">
-    <div class="px-8 bg-gray-950 text-white font-bold">{label}</div>
-    <div class="w-max bg-gray-50 text-gray-950 text-center pl-3 pr-9">
-        <slot />
+    <div class="px-8 bg-gray-950 text-white font-bold">{key}</div>
+    <div
+        class="tag-content w-max bg-gray-50 text-gray-950 text-center pl-3 pr-9"
+        data-value={value}
+    >
+        <slot>{value}</slot>
     </div>
 </div>
+
+<script>
+    document
+        .querySelectorAll<HTMLElement>(".tag-content")
+        .forEach((tagContent) => {
+            tagContent.addEventListener("click", (e) => {
+                const text = tagContent.dataset.value;
+                if (text) navigator.clipboard.writeText(text.trim());
+                // TODO: Popper 提示已复制
+            });
+        });
+</script>
