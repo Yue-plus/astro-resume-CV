@@ -13,6 +13,9 @@ export const GITHUB_ID: string = "Yue-plus";
 /** QQ 号 */
 export const QQ_ID: string = "2528536774";
 
+/** 是否可以通过手机号添加 QQ 好友 */
+export const CAN_ADD_QQ_FRIEND_BY_PHONE: boolean = true;
+
 /** 微信号 */
 export const WEIXIN_ID: string = "_YueZone";
 

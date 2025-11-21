@@ -1,0 +1,28 @@
+---
+import {
+    CAN_ADD_QQ_FRIEND_BY_PHONE,
+    CAN_ADD_WEIXIN_FRIEND_BY_PHONE,
+    EMAIL,
+    PHONE,
+    QQ_ID,
+    WEIXIN_ID,
+} from "../../CV";
+import Tag from "./Tag.astro";
+---
+
+<div class="flex flex-col gap-1.5 items-stretch">
+    <Tag label="邮箱">{EMAIL}</Tag>
+    <!-- <Tag label="手机">
+        {PHONE}
+        {
+            (CAN_ADD_WEIXIN_FRIEND_BY_PHONE || CAN_ADD_QQ_FRIEND_BY_PHONE) && (
+                <small>
+                    （{CAN_ADD_WEIXIN_FRIEND_BY_PHONE && "QQ"}
+                    {CAN_ADD_QQ_FRIEND_BY_PHONE && "微信"}同号）
+                </small>
+            )
+        }
+    </Tag> -->
+    {!CAN_ADD_QQ_FRIEND_BY_PHONE && <Tag label="QQ">{QQ_ID}</Tag>}
+    {!CAN_ADD_WEIXIN_FRIEND_BY_PHONE && <Tag label="微信号">{WEIXIN_ID}</Tag>}
+</div>
