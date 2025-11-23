@@ -1,7 +1,121 @@
 ---
+import type { SvgComponent } from "astro/types";
+import AngularIcon from "devicon/icons/angularjs/angularjs-original.svg";
+import CIcon from "devicon/icons/c/c-original.svg";
+import CPlusPlusIcon from "devicon/icons/cplusplus/cplusplus-original.svg";
+import DartIcon from "devicon/icons/dart/dart-original.svg";
+import DockerIcon from "devicon/icons/docker/docker-original.svg";
+import ElectronIcon from "devicon/icons/electron/electron-original.svg";
+import FlutterIcon from "devicon/icons/flutter/flutter-original.svg";
+import GoIcon from "devicon/icons/go/go-original.svg";
+import InfluxDBIcon from "devicon/icons/influxdb/influxdb-original.svg";
+import JavaIcon from "devicon/icons/java/java-original.svg";
+import JavascriptIcon from "devicon/icons/javascript/javascript-original.svg";
+import JetPackIcon from "devicon/icons/jetpackcompose/jetpackcompose-original.svg";
+import KotlinIcon from "devicon/icons/kotlin/kotlin-original.svg";
+import LinuxIcon from "devicon/icons/linux/linux-original.svg";
+import MariaDBIcon from "devicon/icons/mariadb/mariadb-original.svg";
+import MongoDBIcon from "devicon/icons/mongodb/mongodb-original.svg";
+import MySQLIcon from "devicon/icons/mysql/mysql-original.svg";
+import NodejsIcon from "devicon/icons/nodejs/nodejs-original.svg";
+import PhpIcon from "devicon/icons/php/php-original.svg";
+import PostgreSQLIcon from "devicon/icons/postgresql/postgresql-original.svg";
+import PythonIcon from "devicon/icons/python/python-original.svg";
+import ReactIcon from "devicon/icons/react/react-original.svg";
+import RedisIcon from "devicon/icons/redis/redis-original.svg";
+import RustIcon from "devicon/icons/rust/rust-original.svg";
+import SolidityIcon from "devicon/icons/solidity/solidity-original.svg";
+import SpringIcon from "devicon/icons/spring/spring-original.svg";
+import TypescriptIcon from "devicon/icons/typescript/typescript-original.svg";
+import UMLIcon from "devicon/icons/unifiedmodelinglanguage/unifiedmodelinglanguage-original.svg";
+import VueIcon from "devicon/icons/vuejs/vuejs-original.svg";
+import WindowsIcon from "devicon/icons/windows11/windows11-original.svg";
+import SupabaseIcon from "devicon/icons/supabase/supabase-original.svg";
+import SolidjsIcon from "devicon/icons/solidjs/solidjs-original.svg";
+
 import Title from "./widgets/Title.astro";
+
+const badgeClass =
+    "inline-flex items-center gap-2 bg-gray-100 rounded-full px-3 py-1 text-gray-700";
+const iconClass = "w-5 h-5";
+
+const skills = [
+    [
+        // 语言
+        [KotlinIcon, "Kotlin"],
+        [JavaIcon, "Java"],
+        [JavascriptIcon, "JavaScript"],
+        [TypescriptIcon, "TypeScript"],
+        [NodejsIcon, "Node.js"],
+        [PythonIcon, "Python"],
+        [GoIcon, "Go"],
+        [DartIcon, "Dart"],
+        [SolidityIcon, "Solidity"],
+        [CIcon, "C"],
+        [CPlusPlusIcon, "C++"],
+        [RustIcon, "Rust"],
+        [PhpIcon, "PHP"],
+
+        // 数据库
+        [SupabaseIcon, "Supabase"],
+        [PostgreSQLIcon, "PostgreSQL"],
+        [MariaDBIcon, "MariaDB"],
+        [MySQLIcon, "MySQL"],
+        [InfluxDBIcon, "InfluxDB"],
+        [RedisIcon, "Redis"],
+        [MongoDBIcon, "MongoDB"],
+
+        // 框架
+        [SpringIcon, "Spring"],
+        [FlutterIcon, "Flutter"],
+        [JetPackIcon, "JetPack Compose"],
+        [ReactIcon, "React"],
+        [VueIcon, "Vue"],
+        [AngularIcon, "Angular"],
+        [SolidjsIcon, "Solid.js"],
+        [ElectronIcon, "Electron"],
+
+        // 运维
+        [LinuxIcon, "Linux"],
+        [WindowsIcon, "Windows Server"],
+        [DockerIcon, "Docker"],
+        [null, "企业组网"],
+        [null, "CI/CD"],
+        [null, "DevOps"],
+
+        // 建模
+        [UMLIcon, "UML"],
+        [null, "Visio"],
+
+        // Adobe
+        [null, "Ps"],
+        [null, "Ai"],
+        [null, "Lr"],
+        [null, "Id"],
+        [null, "Au"],
+        [null, "Pr"],
+        [null, "Ae"],
+
+        [null, "AutoCAD"],
+        [null, "Revit"],
+        [null, "Rhino"],
+        [null, "UG/NX"],
+    ],
+];
 ---
 
 <div>
-    <Title title="专业技能" />          
+    <Title title="专业技能" />
+    {
+        skills.map((group) => (
+            <p class="my-2 flex flex-wrap gap-2">
+                {group.map(([Icon, name]) => (
+                    <span class={badgeClass}>
+                        {Icon && <Icon class={iconClass} />}
+                        {name}
+                    </span>
+                ))}
+            </p>
+        ))
+    }
 </div>
