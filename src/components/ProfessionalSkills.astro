@@ -35,10 +35,6 @@ import SolidjsIcon from "devicon/icons/solidjs/solidjs-original.svg";
 
 import Title from "./widgets/Title.astro";
 
-const badgeClass =
-    "inline-flex items-center gap-2 bg-gray-100 rounded-full px-3 py-1 text-gray-700";
-const iconClass = "w-5 h-5";
-
 const skills = [
     [
         // 语言
@@ -111,10 +107,10 @@ const skills = [
     <Title title="专业技能" />
     {
         skills.map((group) => (
-            <p class="my-2 flex flex-wrap gap-2">
+            <p class="my-1 flex flex-wrap gap-1">
                 {group.map(([Icon, name]) => (
-                    <span class={badgeClass}>
-                        {Icon && <Icon class={iconClass} />}
+                    <span class="text-xs inline-flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1 text-gray-700">
+                        {Icon && <Icon class="w-4 h-4" />}
                         {name}
                     </span>
                 ))}
