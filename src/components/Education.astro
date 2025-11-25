@@ -1,0 +1,39 @@
+---
+import { EDUCATION } from "../CV";
+import Title from "./widgets/Title.astro";
+
+const { university, major, timeRange } = EDUCATION;
+---
+
+<div>
+    <Title title="教育经历">
+        <p class="inline-flex items-end gap-4">
+            <span class="text-2xl font-bold">{university}</span>
+            <span class="text-2xl font-medium">{major}</span>
+            <span class="text-xl">{timeRange}</span>
+        </p>
+    </Title>
+
+    <ul class="list-disc ml-6">
+        <li>
+            获得 2024 年江西省职业院校技能大赛
+            <span class="font-semibold">区块链技术应用</span>
+            赛项 二等奖
+        </li>
+        <li>
+            获得 2023 年一带一路暨金砖国家技能发展与技术创新大赛——<br />
+            <span class="font-semibold">
+                第二届人工智能训练与应用（人工智能训练师）决赛（高校组）
+            </span>
+            优秀奖
+        </li>
+        <!-- <li>获得 2022 年全国高职高专院校信息素养大赛九江职业技术学院校内选拔赛 三等奖</li> -->
+        <li>
+            获得 2020 年江西省职业院校技能大赛 中职组
+            <span class="font-semibold">网络搭建与应用</span>
+            一等奖
+        </li>
+        <!-- <li>获得 2021 年吉安市第十八届中职学校技能竞赛 网络搭建与应用 一等奖</li> -->
+        <!-- <li>获得 2020 年吉安市第十七届中职学校技能竞赛 网络搭建与应用 三等奖</li> -->
+    </ul>
+</div>

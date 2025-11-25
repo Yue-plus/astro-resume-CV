@@ -41,6 +41,16 @@ export const JOB_EXPECTATION: string[] = [
 /** 薪资期望 */
 export const SALARY_EXPECTATION: string = "8K+（能提供完善的福利待遇和职业发展机会可议）";
 
+/** 教育经历 */
+export const EDUCATION = {
+    /** 学校 */
+    university: "江西职业技术大学",
+    /** 专业 */
+    major: "软件技术",
+    /** 时间范围 */
+    timeRange: "2022-2025",
+}
+
 /** 专业技能 - 编程语言 */
 export const PROGRAMMING_LANGUAGES: string[] = [
     "Kotlin",
