@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@theme {
+    --color-end-purple: #ff00f0;
+    --color-end-yellow: #fffa00;
+    --color-end-green: #00ffa2;
+
+    --end-gradient-x:
+        90deg,
+        var(--color-end-purple) 20%,
+        var(--color-end-yellow) 0,
+        var(--color-end-yellow) 46%,
+        var(--color-end-green) 0;
+}
