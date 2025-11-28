@@ -1,0 +1,73 @@
+---
+import Title from "./widgets/Title.astro";
+
+const list: {
+    name: string;
+    link: string | null;
+    timeRange: string;
+    role: string;
+    description: string;
+}[] = [
+    {
+        name: "hexo-theme-arknights",
+        link: "https://github.com/Yue-plus/hexo-theme-arknights",
+        timeRange: "2020.03 - 至今",
+        role: "开发",
+        description:
+            "明日方舟罗德岛阵营的 Hexo 主题，支持数学公式、Mermaid 图表、多种评论系统（Valine、Gitalk、Waline、Artalk、Utterances、Giscus）",
+    },
+    {
+        name: "悦域江职",
+        link: "https://jvtc.yue.zone/",
+        timeRange: "2022.09 - 至今",
+        role: "开发",
+        description: `
+            使用 Docusaurus 框架搭建基于 React + Markdown + Katex 技术栈实现内容模块化开发；
+            结合 GitHub Actions 搭建自动化 CI/CD 流程；
+            网站内容聚焦软件开发技术、课程核心知识整合及专升本考试专题，帮助校内外同学们系统化提升技术能力与学习效率。
+        `,
+    },
+    {
+        name: "游戏服务器",
+        link: null,
+        timeRange: "2020.03 - 至今",
+        role: "运维",
+        description:
+            "有以下游戏服务器运维经验：Minecraft、Terraria、Factorio、Unturned、CS:GO、饥荒。",
+    },
+    {
+        name: "Kotlin 语言中文站",
+        link: "https://www.kotlincn.net/",
+        timeRange: "2019.12 - 2021.01",
+        role: "翻译",
+        description:
+            "翻译了网站主框架、语言指南、多平台程序设计、集合操作、编译器选项、面向 Python 开发者的 Kotlin 教程、社区等内容。",
+    },
+];
+---
+
+<div>
+    <Title title="项目 / 社团 / 组织经历" />
+    {
+        list.map(({ name, link, timeRange, role, description }) => (
+            <section class="py-2">
+                <h3 class="text-3xl font-semibold">
+                    <div class="w-[52%] inline-block">
+                        {link ? (
+                            <a href={link} target="_blank" class="text-[#2bf]">
+                                {name}
+                            </a>
+                        ) : (
+                            name
+                        )}
+                    </div>
+                    <div class="w-[12%] inline-block text-2xl font-bold">
+                        {role}
+                    </div>
+                    <span class="text-xl font-normal">{timeRange}</span>
+                </h3>
+                <span>{description}</span>
+            </section>
+        ))
+    }
+</div>
