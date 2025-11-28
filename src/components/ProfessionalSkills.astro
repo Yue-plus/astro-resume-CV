@@ -1,5 +1,4 @@
 ---
-import type { SvgComponent } from "astro/types";
 import AngularIcon from "devicon/icons/angularjs/angularjs-original.svg";
 import CIcon from "devicon/icons/c/c-original.svg";
 import CPlusPlusIcon from "devicon/icons/cplusplus/cplusplus-original.svg";
@@ -25,96 +24,102 @@ import ReactIcon from "devicon/icons/react/react-original.svg";
 import RedisIcon from "devicon/icons/redis/redis-original.svg";
 import RustIcon from "devicon/icons/rust/rust-original.svg";
 import SolidityIcon from "devicon/icons/solidity/solidity-original.svg";
+import SolidjsIcon from "devicon/icons/solidjs/solidjs-original.svg";
 import SpringIcon from "devicon/icons/spring/spring-original.svg";
+import SupabaseIcon from "devicon/icons/supabase/supabase-original.svg";
 import TypescriptIcon from "devicon/icons/typescript/typescript-original.svg";
 import UMLIcon from "devicon/icons/unifiedmodelinglanguage/unifiedmodelinglanguage-original.svg";
 import VueIcon from "devicon/icons/vuejs/vuejs-original.svg";
 import WindowsIcon from "devicon/icons/windows11/windows11-original.svg";
-import SupabaseIcon from "devicon/icons/supabase/supabase-original.svg";
-import SolidjsIcon from "devicon/icons/solidjs/solidjs-original.svg";
 
 import Title from "./widgets/Title.astro";
 
+import Image from "astro/components/Image.astro";
+import GitHub from "../assets/QR_github.com_Yue-plus.png";
+
 const skills = [
-    [
-        // 语言
-        [KotlinIcon, "Kotlin"],
-        [JavaIcon, "Java"],
-        [JavascriptIcon, "JavaScript"],
-        [TypescriptIcon, "TypeScript"],
-        [NodejsIcon, "Node.js"],
-        [PythonIcon, "Python"],
-        [GoIcon, "Go"],
-        [DartIcon, "Dart"],
-        [SolidityIcon, "Solidity"],
-        [CIcon, "C"],
-        [CPlusPlusIcon, "C++"],
-        [RustIcon, "Rust"],
-        [PhpIcon, "PHP"],
+    // 语言
+    [KotlinIcon, "Kotlin"],
+    [JavaIcon, "Java"],
+    [JavascriptIcon, "JavaScript"],
+    [TypescriptIcon, "TypeScript"],
+    [NodejsIcon, "Node.js"],
+    [PythonIcon, "Python"],
+    [GoIcon, "Go"],
+    [DartIcon, "Dart"],
+    [SolidityIcon, "Solidity"],
+    [CIcon, "C"],
+    [CPlusPlusIcon, "C++"],
+    [RustIcon, "Rust"],
+    [PhpIcon, "PHP"],
 
-        // 数据库
-        [SupabaseIcon, "Supabase"],
-        [PostgreSQLIcon, "PostgreSQL"],
-        [MariaDBIcon, "MariaDB"],
-        [MySQLIcon, "MySQL"],
-        [InfluxDBIcon, "InfluxDB"],
-        [RedisIcon, "Redis"],
-        [MongoDBIcon, "MongoDB"],
+    // 数据库
+    [SupabaseIcon, "Supabase"],
+    [PostgreSQLIcon, "PostgreSQL"],
+    [MariaDBIcon, "MariaDB"],
+    [MySQLIcon, "MySQL"],
+    [InfluxDBIcon, "InfluxDB"],
+    [RedisIcon, "Redis"],
+    [MongoDBIcon, "MongoDB"],
 
-        // 框架
-        [SpringIcon, "Spring"],
-        [FlutterIcon, "Flutter"],
-        [JetPackIcon, "JetPack Compose"],
-        [ReactIcon, "React"],
-        [VueIcon, "Vue"],
-        [AngularIcon, "Angular"],
-        [SolidjsIcon, "Solid.js"],
-        [ElectronIcon, "Electron"],
+    // 框架
+    [SpringIcon, "Spring"],
+    [FlutterIcon, "Flutter"],
+    [JetPackIcon, "JetPack Compose"],
+    [ReactIcon, "React"],
+    [VueIcon, "Vue"],
+    [AngularIcon, "Angular"],
+    [SolidjsIcon, "Solid.js"],
+    [ElectronIcon, "Electron"],
 
-        // 运维
-        [LinuxIcon, "Linux"],
-        [WindowsIcon, "Windows Server"],
-        [DockerIcon, "Docker"],
-        [null, "企业组网"],
-        [null, "CI/CD"],
-        [null, "DevOps"],
+    // 运维
+    [LinuxIcon, "Linux"],
+    [WindowsIcon, "Windows Server"],
+    [DockerIcon, "Docker"],
+    [null, "企业组网"],
+    [null, "CI/CD"],
+    [null, "DevOps"],
 
-        // 建模
-        [UMLIcon, "UML"],
-        [null, "Visio"],
+    // 建模
+    [UMLIcon, "UML"],
+    [null, "Visio"],
 
-        // Adobe
-        [null, "Ps"],
-        [null, "Ai"],
-        [null, "Lr"],
-        [null, "Id"],
-        [null, "Au"],
-        [null, "Pr"],
-        [null, "Ae"],
+    // Adobe
+    [null, "Ps"],
+    [null, "Ai"],
+    [null, "Lr"],
+    [null, "Id"],
+    [null, "Au"],
+    [null, "Pr"],
+    [null, "Ae"],
 
-        [null, "AutoCAD"],
-        [null, "Revit"],
-        [null, "Rhino"],
-        [null, "UG/NX"],
-        [null, "日语"],
-        [null, "英语"],
-        [null, "C1 驾照"],
-    ],
+    [null, "AutoCAD"],
+    [null, "Revit"],
+    [null, "Rhino"],
+    [null, "UG/NX"],
+    [null, "日语"],
+    [null, "英语"],
+    [null, "C1 驾照"],
 ];
 ---
 
-<div>
+<div class="relative">
     <Title title="专业技能" />
-    {
-        skills.map((group) => (
-            <p class="my-1 flex flex-wrap gap-1">
-                {group.map(([Icon, name]) => (
-                    <span class="text-xs inline-flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1 text-gray-700">
-                        {Icon && <Icon class="w-4 h-4" />}
-                        {name}
-                    </span>
-                ))}
-            </p>
-        ))
-    }
+    <p class="my-1 space-x-1 space-y-1">
+        <a href="https://github.com/Yue-plus" target="_blank">
+            <Image
+                src={GitHub}
+                alt="Yue-plus 的 GitHub 主页二维码"
+                class="w-32 h-32 inline-block float-right"
+            />
+        </a>
+        {
+            skills.map(([Icon, name]) => (
+                <span class="text-xs inline-flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1 text-gray-700">
+                    {Icon && <Icon class="w-4 h-4" />}
+                    {name}
+                </span>
+            ))
+        }
+    </p>
 </div>
