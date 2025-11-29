@@ -1,4 +1,5 @@
 ---
+import Paper from "../components/widgets/Paper.astro";
 import Layout from "../layouts/Layout.astro";
 
 import BasicInformation from "../components/BasicInformation.astro";
@@ -10,12 +11,12 @@ import WorkExperience from "../components/WorkExperience.astro";
 ---
 
 <Layout>
-	<main class="w-[210mm] h-full mx-auto p-[12.7mm] overflow-auto">
+	<Paper>
 		<BasicInformation />
 		<JobExpectations />
 		<WorkExperience />
 		<Education />
 		<ProjectAndClubAndOrganizationExperience />
 		<ProfessionalSkills />
-	</main>
+	</Paper>
 </Layout>

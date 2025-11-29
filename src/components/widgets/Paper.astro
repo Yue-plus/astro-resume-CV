@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import NoticeDetailDecoLB from "../../assets/background/20-NoticeDetail_decoLB.svg";
+import PointsBG from "../../assets/background/points-bg.png";
+import DecoLB from "../../assets/background/subpage-deco-lb.png";
+import DecoRT from "../../assets/background/subpage-deco-rt.png";
+---
+
+{
+    // A4 纸张
+    // <main class="w-[210mm] h-[297mm] p-[12.7mm] mx-auto overflow-auto"></main>
+}
+<main
+    class="w-[210mm] mx-auto p-[12.7mm] pb-42 print:my-0 overflow-auto relative"
+>
+    <Image
+        src={DecoRT}
+        alt="deco-rt"
+        class="absolute right-0 top-0 select-none"
+    />
+    <Image
+        src={DecoLB}
+        alt="deco-lb"
+        class="absolute left-0 bottom-0 select-none"
+    />
+    <footer
+        class="h-150 absolute inset-x-0 bottom-0 opacity-8 select-none"
+        style={`
+            background-image:url(${PointsBG.src});
+            mask-image: linear-gradient(transparent 0px, transparent 50%, black 90%, black);
+            background-position: center bottom;
+        `}
+    >
+    </footer>
+    <NoticeDetailDecoLB
+        class="w-24 absolute bottom-24 text-gray-500"
+        style="filter: drop-shadow(rgb(255, 255, 255) 0px 0px 0.25rem) drop-shadow(rgb(255, 255, 255) 0px 0px 0.5rem) drop-shadow(rgb(255, 255, 255) 0px 0px 0.5rem);"
+    />
+    <slot />
+</main>
