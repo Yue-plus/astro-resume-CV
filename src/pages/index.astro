@@ -1,19 +1,20 @@
 ---
+import Image from "astro/components/Image.astro";
 import BlockBG from "../assets/background/block-bg.svg";
-import Paper from "../components/widgets/Paper.astro";
-import Layout from "../layouts/Layout.astro";
-
+import GitHub from "../assets/QR_github.com_Yue-plus.png";
 import BasicInformation from "../components/BasicInformation.astro";
 import Education from "../components/Education.astro";
 import JobExpectations from "../components/JobExpectations.astro";
 import ProfessionalSkills from "../components/ProfessionalSkills.astro";
 import ProjectAndClubAndOrganizationExperience from "../components/ProjectAndClubAndOrganizationExperience.astro";
+import Paper from "../components/widgets/Paper.astro";
 import WorkExperience from "../components/WorkExperience.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
 	<div
-		class="fixed top-0 left-0 w-full h-full bg-size-[12.8125rem_12.8125rem] opacity-5"
+		class="fixed top-0 left-0 w-full h-full bg-size-[12.8125rem_12.8125rem] opacity-5 select-none"
 		style={{
 			backgroundImage: `url(${BlockBG.src})`,
 		}}
@@ -22,9 +23,21 @@ import WorkExperience from "../components/WorkExperience.astro";
 	<Paper>
 		<BasicInformation />
 		<JobExpectations />
-		<WorkExperience />
 		<Education />
+		<WorkExperience />
 		<ProjectAndClubAndOrganizationExperience />
 		<ProfessionalSkills />
+
+		<a
+			href="https://github.com/Yue-plus"
+			target="_blank"
+			class="absolute right-12"
+		>
+			<Image
+				src={GitHub}
+				alt="Yue-plus 的 GitHub 主页二维码"
+				class="w-32 h-32"
+			/>
+		</a>
 	</Paper>
 </Layout>

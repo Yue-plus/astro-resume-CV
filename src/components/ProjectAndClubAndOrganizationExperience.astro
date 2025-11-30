@@ -14,7 +14,7 @@ const list: {
         timeRange: "2020.03 - 至今",
         role: "开发",
         description:
-            "明日方舟罗德岛阵营的 Hexo 主题，支持数学公式、Mermaid 图表、多种评论系统（Valine、Gitalk、Waline、Artalk、Utterances、Giscus）",
+            "明日方舟罗德岛阵营的 Hexo 主题，支持 MathJax 数学公式、Mermaid 图表、多种评论系统（Valine、Gitalk、Waline、Artalk、Utterances、Giscus）",
     },
     {
         name: "悦域江职",
@@ -28,22 +28,28 @@ const list: {
         `,
     },
     {
-        name: "游戏服务器",
-        link: null,
-        timeRange: "2020.03 - 至今",
-        role: "运维",
-        description:
-            "有以下游戏服务器运维经验：Minecraft、Terraria、Factorio、Unturned、CS:GO、饥荒。",
-    },
-    {
         name: "Kotlin 语言中文站",
         link: "https://www.kotlincn.net/",
         timeRange: "2019.12 - 2021.01",
         role: "翻译",
         description:
-            "翻译了网站主框架、语言指南、多平台程序设计、集合操作、编译器选项、面向 Python 开发者的 Kotlin 教程、社区等内容。",
+            // https://github.com/hltj/kotlin-web-site-cn/commits/master/?author=Yue-plus
+            "参与 Kotlin 中文站建设，负责翻译并维护网站主框架、语言指南、多平台程序设计、集合操作、Kotlin/JS IR、编译器选项、面向 Python 开发者的 Kotlin 教程及社区相关文档，提升中文开发者阅读体验。",
+    },
+    {
+        name: "游戏服务器",
+        link: null,
+        timeRange: "2014.05 - 至今",
+        role: "运维",
+        description: `
+            熟练运用 SteamCMD、Docker 及 Linux systemd 等工具，长期独立运维多款游戏服务器
+            （Minecraft、Terraria、Factorio、Unturned、CS:GO、饥荒），
+            实现一键开服、自动备份与跨平台部署，保障 7×24 小时稳定运行。
+        `,
     },
 ];
+
+// TODO: 显示 GitHub 仓库 star 数量
 ---
 
 <div>

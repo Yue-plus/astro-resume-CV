@@ -106,13 +106,6 @@ const skills = [
 <div class="relative">
     <Title title="专业技能" />
     <p class="my-1 space-x-1 space-y-1">
-        <a href="https://github.com/Yue-plus" target="_blank">
-            <Image
-                src={GitHub}
-                alt="Yue-plus 的 GitHub 主页二维码"
-                class="w-32 h-32 inline-block float-right"
-            />
-        </a>
         {
             skills.map(([Icon, name]) => (
                 <span class="text-xs inline-flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1 text-gray-700">
@@ -122,4 +115,15 @@ const skills = [
             ))
         }
     </p>
+    <a
+        href="https://github.com/Yue-plus"
+        target="_blank"
+        class="absolute right-0"
+    >
+        <Image
+            src={GitHub}
+            alt="Yue-plus 的 GitHub 主页二维码"
+            class="w-32 h-32 inline-block float-right"
+        />
+    </a>
 </div>

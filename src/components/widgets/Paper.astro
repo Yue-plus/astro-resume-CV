@@ -11,29 +11,30 @@ import DecoRT from "../../assets/background/subpage-deco-rt.png";
     // <main class="w-[210mm] h-[297mm] p-[12.7mm] mx-auto overflow-auto"></main>
 }
 <main
-    class="w-[210mm] mx-auto p-[12.7mm] pb-42 print:my-0 bg-white shadow-2xl overflow-auto relative"
+    class="w-[210mm] mx-auto p-[12.7mm] pb-42 print:my-0 bg-white shadow-2xl overflow-auto relative z-0"
 >
     <Image
         src={DecoRT}
         alt="deco-rt"
-        class="absolute right-0 top-0 select-none"
+        class="absolute right-0 top-0 select-none -z-1"
     />
     <Image
         src={DecoLB}
         alt="deco-lb"
-        class="absolute left-0 bottom-0 select-none"
+        class="absolute left-0 bottom-0 select-none -z-1"
     />
     <footer
-        class="h-150 absolute inset-x-0 bottom-0 opacity-8 select-none"
-        style={`
-            background-image:url(${PointsBG.src});
-            mask-image: linear-gradient(transparent 0px, transparent 50%, black 90%, black);
-            background-position: center bottom;
-        `}
+        class="h-150 absolute inset-x-0 bottom-0 opacity-8 select-none -z-1"
+        style={{
+            backgroundImage: `url(${PointsBG.src})`,
+            maskImage:
+                "linear-gradient(transparent 0px, transparent 50%, black 90%, black)",
+            backgroundPosition: "center bottom",
+        }}
     >
     </footer>
     <NoticeDetailDecoLB
-        class="w-24 absolute bottom-24 text-gray-500"
+        class="w-24 absolute bottom-24 text-gray-500 select-none -z-1"
         style="filter: drop-shadow(rgb(255, 255, 255) 0px 0px 0.25rem) drop-shadow(rgb(255, 255, 255) 0px 0px 0.5rem) drop-shadow(rgb(255, 255, 255) 0px 0px 0.5rem);"
     />
     <slot />
