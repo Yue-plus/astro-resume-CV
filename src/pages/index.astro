@@ -1,4 +1,5 @@
 ---
+import BlockBG from "../assets/background/block-bg.svg";
 import Paper from "../components/widgets/Paper.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -11,6 +12,13 @@ import WorkExperience from "../components/WorkExperience.astro";
 ---
 
 <Layout>
+	<div
+		class="fixed top-0 left-0 w-full h-full bg-size-[12.8125rem_12.8125rem] opacity-5"
+		style={{
+			backgroundImage: `url(${BlockBG.src})`,
+		}}
+	>
+	</div>
 	<Paper>
 		<BasicInformation />
 		<JobExpectations />
