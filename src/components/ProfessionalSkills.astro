@@ -1,4 +1,5 @@
 ---
+// https://devicon.dev/
 import AngularIcon from "devicon/icons/angularjs/angularjs-original.svg";
 import CIcon from "devicon/icons/c/c-original.svg";
 import CPlusPlusIcon from "devicon/icons/cplusplus/cplusplus-original.svg";
@@ -7,11 +8,13 @@ import DockerIcon from "devicon/icons/docker/docker-original.svg";
 import ElectronIcon from "devicon/icons/electron/electron-original.svg";
 import FlutterIcon from "devicon/icons/flutter/flutter-original.svg";
 import GoIcon from "devicon/icons/go/go-original.svg";
+import GodotIcon from "devicon/icons/godot/godot-original.svg";
 import InfluxDBIcon from "devicon/icons/influxdb/influxdb-original.svg";
 import JavaIcon from "devicon/icons/java/java-original.svg";
 import JavascriptIcon from "devicon/icons/javascript/javascript-original.svg";
 import JetPackIcon from "devicon/icons/jetpackcompose/jetpackcompose-original.svg";
 import KotlinIcon from "devicon/icons/kotlin/kotlin-original.svg";
+import KtorIcon from "devicon/icons/ktor/ktor-original.svg";
 import LinuxIcon from "devicon/icons/linux/linux-original.svg";
 import MariaDBIcon from "devicon/icons/mariadb/mariadb-original.svg";
 import MongoDBIcon from "devicon/icons/mongodb/mongodb-original.svg";
@@ -20,110 +23,139 @@ import NodejsIcon from "devicon/icons/nodejs/nodejs-original.svg";
 import PhpIcon from "devicon/icons/php/php-original.svg";
 import PostgreSQLIcon from "devicon/icons/postgresql/postgresql-original.svg";
 import PythonIcon from "devicon/icons/python/python-original.svg";
+import RabbitMQIcon from "devicon/icons/rabbitmq/rabbitmq-original.svg";
 import ReactIcon from "devicon/icons/react/react-original.svg";
 import RedisIcon from "devicon/icons/redis/redis-original.svg";
 import RustIcon from "devicon/icons/rust/rust-original.svg";
 import SolidityIcon from "devicon/icons/solidity/solidity-original.svg";
 import SolidjsIcon from "devicon/icons/solidjs/solidjs-original.svg";
 import SpringIcon from "devicon/icons/spring/spring-original.svg";
+import SQLiteIcon from "devicon/icons/sqlite/sqlite-original.svg";
 import SupabaseIcon from "devicon/icons/supabase/supabase-original.svg";
 import TypescriptIcon from "devicon/icons/typescript/typescript-original.svg";
 import UMLIcon from "devicon/icons/unifiedmodelinglanguage/unifiedmodelinglanguage-original.svg";
+import UnityIcon from "devicon/icons/unity/unity-original.svg";
+import UnrealEngineIcon from "devicon/icons/unrealengine/unrealengine-original.svg";
 import VueIcon from "devicon/icons/vuejs/vuejs-original.svg";
 import WindowsIcon from "devicon/icons/windows11/windows11-original.svg";
+import Neo4jIcon from "devicon/icons/neo4j/neo4j-original.svg";
 
+
+import Badge, { type BadgeProps } from "./widgets/Badge.astro";
 import Title from "./widgets/Title.astro";
 
-import Image from "astro/components/Image.astro";
-import GitHub from "../assets/QR_github.com_Yue-plus.png";
+// 编程语言
+const programmingLanguages: BadgeProps[] = [
+    { Icon: KotlinIcon, text: "Kotlin" },
+    { Icon: JavaIcon, text: "Java" },
+    { Icon: JavascriptIcon, text: "JavaScript" },
+    { Icon: TypescriptIcon, text: "TypeScript" },
+    { Icon: NodejsIcon, text: "Node.js" },
+    { Icon: PythonIcon, text: "Python" },
+    { Icon: GoIcon, text: "Go" },
+    { Icon: DartIcon, text: "Dart" },
+    { Icon: SolidityIcon, text: "Solidity" },
+    { Icon: CIcon, text: "C" },
+    { Icon: CPlusPlusIcon, text: "C++" },
+    { Icon: RustIcon, text: "Rust" },
+    { Icon: PhpIcon, text: "PHP" },
+];
+
+// 数据库
+const databases: BadgeProps[] = [
+    { Icon: SupabaseIcon, text: "Supabase" },
+    { Icon: PostgreSQLIcon, text: "PostgreSQL" },
+    { Icon: MariaDBIcon, text: "MariaDB" },
+    { Icon: MySQLIcon, text: "MySQL" },
+    { Icon: null, text: "H2" },
+    { Icon: SQLiteIcon, text: "SQLite" },
+    { Icon: InfluxDBIcon, text: "InfluxDB" },
+    { Icon: RedisIcon, text: "Redis" },
+    { Icon: MongoDBIcon, text: "MongoDB" },
+    { Icon: Neo4jIcon, text: "Neo4j" },
+    { Icon: RabbitMQIcon, text: "RabbitMQ" },
+];
+
+// 开发框架
+const frameworks: BadgeProps[] = [
+    { Icon: SpringIcon, text: "Spring" },
+    { Icon: KtorIcon, text: "Ktor" },
+    { Icon: FlutterIcon, text: "Flutter" },
+    { Icon: JetPackIcon, text: "JetPack Compose" },
+    { Icon: ElectronIcon, text: "Electron" },
+    { Icon: UnityIcon, text: "Unity" },
+    { Icon: UnrealEngineIcon, text: "Unreal Engine" },
+    { Icon: GodotIcon, text: "Godot" },
+    { Icon: ReactIcon, text: "React" },
+    { Icon: VueIcon, text: "Vue" },
+    { Icon: AngularIcon, text: "Angular" },
+    { Icon: SolidjsIcon, text: "Solid.js" },
+];
+
+// 运维
+const devops: BadgeProps[] = [
+    { Icon: LinuxIcon, text: "Linux" },
+    { Icon: WindowsIcon, text: "Windows Server" },
+    { Icon: DockerIcon, text: "Docker" },
+    { Icon: null, text: "企业组网" },
+    { Icon: null, text: "CI/CD" },
+    { Icon: null, text: "DevOps" },
+];
+
+// 业务与设计
+const businessAndDesign: BadgeProps[] = [
+    { Icon: UMLIcon, text: "UML" },
+    // { Icon: null, text: "Word" },
+    // { Icon: null, text: "Excel" },
+    // { Icon: null, text: "PowerPoint" },
+    { Icon: null, text: "Visio" },
+    { Icon: null, text: "Adobe [ Ps | Ai | Lr | Au | Pr | Ae | Id ]" },
+    { Icon: null, text: "AxureRP" },
+    { Icon: null, text: "UI/UX" },
+];
+
+// 其他技能
+const otherSkills: BadgeProps[] = [
+    { Icon: null, text: "AutoCAD" },
+    { Icon: null, text: "Revit" },
+    { Icon: null, text: "Rhino" },
+    { Icon: null, text: "UG/NX" },
+    { Icon: null, text: "日语" },
+    { Icon: null, text: "英语" },
+    { Icon: null, text: "机动车驾驶证 C1" },
+];
 
 const skills = [
-    // 语言
-    [KotlinIcon, "Kotlin"],
-    [JavaIcon, "Java"],
-    [JavascriptIcon, "JavaScript"],
-    [TypescriptIcon, "TypeScript"],
-    [NodejsIcon, "Node.js"],
-    [PythonIcon, "Python"],
-    [GoIcon, "Go"],
-    [DartIcon, "Dart"],
-    [SolidityIcon, "Solidity"],
-    [CIcon, "C"],
-    [CPlusPlusIcon, "C++"],
-    [RustIcon, "Rust"],
-    [PhpIcon, "PHP"],
-
-    // 数据库
-    [SupabaseIcon, "Supabase"],
-    [PostgreSQLIcon, "PostgreSQL"],
-    [MariaDBIcon, "MariaDB"],
-    [MySQLIcon, "MySQL"],
-    [InfluxDBIcon, "InfluxDB"],
-    [RedisIcon, "Redis"],
-    [MongoDBIcon, "MongoDB"],
-
-    // 框架
-    [SpringIcon, "Spring"],
-    [FlutterIcon, "Flutter"],
-    [JetPackIcon, "JetPack Compose"],
-    [ReactIcon, "React"],
-    [VueIcon, "Vue"],
-    [AngularIcon, "Angular"],
-    [SolidjsIcon, "Solid.js"],
-    [ElectronIcon, "Electron"],
-
-    // 运维
-    [LinuxIcon, "Linux"],
-    [WindowsIcon, "Windows Server"],
-    [DockerIcon, "Docker"],
-    [null, "企业组网"],
-    [null, "CI/CD"],
-    [null, "DevOps"],
-
-    // 建模
-    [UMLIcon, "UML"],
-    [null, "Visio"],
-
-    // Adobe
-    [null, "Ps"],
-    [null, "Ai"],
-    [null, "Lr"],
-    [null, "Id"],
-    [null, "Au"],
-    [null, "Pr"],
-    [null, "Ae"],
-
-    [null, "AutoCAD"],
-    [null, "Revit"],
-    [null, "Rhino"],
-    [null, "UG/NX"],
-    [null, "日语"],
-    [null, "英语"],
-    [null, "C1 驾照"],
+    { title: "编程语言", list: programmingLanguages },
+    { title: "数据库", list: databases },
+    { title: "开发框架", list: frameworks },
+    { title: "运维", list: devops },
+    { title: "业务 / 设计", list: businessAndDesign },
+    { title: "其他", list: otherSkills },
 ];
 ---
 
 <div class="relative">
     <Title title="专业技能" />
-    <p class="my-1 space-x-1 space-y-1">
+    <ul>
         {
-            skills.map(([Icon, name]) => (
-                <span class="text-xs inline-flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1 text-gray-700">
-                    {Icon && <Icon class="w-4 h-4" />}
-                    {name}
-                </span>
+            skills.map(({ title, list }, index, array) => (
+                <>
+                    <li class="flex gap-2 items-center">
+                        <span class="w-28 pl-1 font-bold text-xl shrink-0">
+                            {title}
+                        </span>
+                        <div class="inline-flex flex-wrap gap-1">
+                            {list.map(({ Icon, text }) => (
+                                <Badge {...{ Icon, text }} />
+                            ))}
+                        </div>
+                    </li>
+                    {index !== array.length - 1 && (
+                        <hr class="w-full h-px my-1 border-0 bg-linear-to-r from-gray-400 to-transparent" />
+                    )}
+                </>
             ))
         }
-    </p>
-    <a
-        href="https://github.com/Yue-plus"
-        target="_blank"
-        class="absolute right-0"
-    >
-        <Image
-            src={GitHub}
-            alt="Yue-plus 的 GitHub 主页二维码"
-            class="w-32 h-32 inline-block float-right"
-        />
-    </a>
+    </ul>
 </div>

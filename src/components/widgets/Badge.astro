@@ -1,0 +1,20 @@
+---
+import type { ImageMetadata } from "astro";
+import type { SvgComponent } from "astro/types";
+
+interface Props {
+    Icon: (SvgComponent & ImageMetadata) | null;
+    text: string;
+}
+
+export type BadgeProps = Props;
+
+const { Icon, text } = Astro.props;
+---
+
+<span
+    class="text-xs inline-flex items-center gap-1 bg-gray-100 rounded-full px-3 py-1 text-gray-700"
+>
+    {Icon && <Icon class="w-4 h-4" />}
+    {text}
+</span>
