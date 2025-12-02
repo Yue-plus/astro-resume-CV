@@ -10,13 +10,23 @@ import Header from "../components/widgets/Header.astro";
 import Paper from "../components/widgets/Paper.astro";
 import WorkExperience from "../components/WorkExperience.astro";
 import Layout from "../layouts/Layout.astro";
+import GitHubIcon from "devicon/icons/github/github-original.svg";
 ---
 
 <Layout lang="zh-Hans" title="刘悦阳的履历">
     <BodyTexture />
     <Header>
+        <a
+            target="_blank"
+            href="https://github.com/Yue-plus/astro-resume-CV"
+            class="text-lg font-bold text-center"
+        >
+            <GitHubIcon
+                class="w-16 h-16 hover:rotate-360 transition-all ease-in-out duration-500"
+            />
+        </a>
         <div class="h-[113px] inline-flex items-stretch">
-            <div class="p-8 bg-gray-100 flex items-center">
+            <div class="p-8 flex items-center">
                 注意在打印对话框中设置：
                 <br />
                 无边距；<wbr />不打印页眉页脚；<wbr />打印背景图形
@@ -31,14 +41,14 @@ import Layout from "../layouts/Layout.astro";
             <a
                 target="_blank"
                 href="/print"
-                class="w-[113px] p-8 flex items-center lg:text-2xl font-bold bg-gray-300 hover:bg-end-yellow duration-150"
+                class="w-[113px] p-8 flex items-center lg:text-2xl font-bold bg-gray-200 hover:bg-end-yellow duration-150"
             >
                 打印<br />简历
             </a>
             <a
                 target="_blank"
                 href="/刘悦阳的履历-全栈开发-20251202.pdf"
-                class="w-[113px] p-8 flex items-center lg:text-2xl font-bold bg-gray-300 hover:bg-end-yellow duration-150"
+                class="w-[113px] p-8 flex items-center lg:text-2xl font-bold bg-gray-200 hover:bg-end-yellow duration-150"
             >
                 下载<br />PDF
             </a>
