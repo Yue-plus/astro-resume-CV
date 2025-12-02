@@ -6,22 +6,24 @@ import ProfessionalSkills from "../components/ProfessionalSkills.astro";
 import ProjectAndClubAndOrganizationExperience from "../components/ProjectAndClubAndOrganizationExperience.astro";
 import QRcode from "../components/QRcode.astro";
 import BodyTexture from "../components/widgets/BodyTexture.astro";
-import Paper from "../components/widgets/Paper.astro";
+import PaperA4 from "../components/widgets/PaperA4.astro";
 import WorkExperience from "../components/WorkExperience.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout lang="zh-Hans" title="刘悦阳的履历">
-	<BodyTexture />
-	<div class="py-24 print:py-0">
-		<Paper>
-			<BasicInformation />
-			<JobExpectations />
-			<Education />
-			<WorkExperience />
-			<ProjectAndClubAndOrganizationExperience />
-			<ProfessionalSkills />
-			<QRcode />
-		</Paper>
-	</div>
+    <BodyTexture />
+    <div class="flex flex-wrap gap-24 justify-center py-24 print:py-0">
+        <PaperA4>
+            <BasicInformation />
+            <JobExpectations />
+            <Education />
+            <WorkExperience />
+        </PaperA4>
+        <PaperA4>
+            <ProjectAndClubAndOrganizationExperience />
+            <ProfessionalSkills />
+            <QRcode />
+        </PaperA4>
+    </div>
 </Layout>
