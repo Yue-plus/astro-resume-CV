@@ -11,9 +11,11 @@ import WorkExperience from "../components/WorkExperience.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout lang="zh-Hans" title="刘悦阳的履历">
+<Layout lang="zh-Hans" title="打印：刘悦阳的履历">
     <BodyTexture />
-    <div class="flex flex-wrap gap-24 justify-center py-24 print:py-0">
+    <div
+        class="min-w-[210mm] flex flex-wrap sm:gap-8 lg:gap-24 justify-center lg:py-24 print:py-0"
+    >
         <PaperA4>
             <BasicInformation />
             <JobExpectations />
