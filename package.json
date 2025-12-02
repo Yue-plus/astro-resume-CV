@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "author": "Yue-plus <Yue_plus@foxmail.com>",
   "license": "MIT",
+  "packageManager": "pnpm@10.24.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -11,9 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/ts-plugin": "^1.10.5",
+    "@astrojs/ts-plugin": "^1.10.6",
     "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.16.0",
+    "astro": "^5.16.3",
     "devicon": "^2.17.0",
     "tailwindcss": "^4.1.17"
   }
