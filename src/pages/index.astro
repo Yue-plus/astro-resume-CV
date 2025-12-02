@@ -6,22 +6,46 @@ import ProfessionalSkills from "../components/ProfessionalSkills.astro";
 import ProjectAndClubAndOrganizationExperience from "../components/ProjectAndClubAndOrganizationExperience.astro";
 import QRcode from "../components/QRcode.astro";
 import BodyTexture from "../components/widgets/BodyTexture.astro";
+import Header from "../components/widgets/Header.astro";
 import Paper from "../components/widgets/Paper.astro";
 import WorkExperience from "../components/WorkExperience.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout lang="zh-Hans" title="刘悦阳的履历">
-	<BodyTexture />
-	<div class="lg:py-24 print:py-0">
-		<Paper>
-			<BasicInformation />
-			<JobExpectations />
-			<Education />
-			<WorkExperience />
-			<ProjectAndClubAndOrganizationExperience />
-			<ProfessionalSkills />
-			<QRcode />
-		</Paper>
-	</div>
+    <BodyTexture />
+    <Header>
+        <div class="h-[113px] inline-flex items-stretch">
+            <div class="p-8 bg-gray-100 flex items-center">
+                注意在打印对话框中设置：
+                <br />
+                无边距；<wbr />不打印页眉页脚；<wbr />打印背景图形
+                <!-- <ul>
+                    <li>布局：纵向</li>
+                    <li>纸张大小：A4</li>
+                    <li>缩放：100%</li>
+                    <li>边距：无</li>
+                    <li>选项：不打印页眉页脚；打印背景图形</li>
+                </ul> -->
+            </div>
+            <a
+                target="_blank"
+                href="/print"
+                class="w-[113px] p-8 flex items-center lg:text-2xl font-bold bg-gray-300 hover:bg-end-yellow duration-150"
+            >
+                打印<br />简历
+            </a>
+        </div>
+    </Header>
+    <div class="lg:py-24 print:py-0">
+        <Paper>
+            <BasicInformation />
+            <JobExpectations />
+            <Education />
+            <WorkExperience />
+            <ProjectAndClubAndOrganizationExperience />
+            <ProfessionalSkills />
+            <QRcode />
+        </Paper>
+    </div>
 </Layout>
