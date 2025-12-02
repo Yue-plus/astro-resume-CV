@@ -12,7 +12,7 @@ import WorkExperience from "../components/WorkExperience.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
+<Layout lang="zh-Hans" title="刘悦阳的履历">
 	<div
 		class="fixed top-0 left-0 w-full h-full bg-size-[12.8125rem_12.8125rem] opacity-5 select-none print:hidden"
 		style={{
@@ -20,24 +20,26 @@ import Layout from "../layouts/Layout.astro";
 		}}
 	>
 	</div>
-	<Paper>
-		<BasicInformation />
-		<JobExpectations />
-		<Education />
-		<WorkExperience />
-		<ProjectAndClubAndOrganizationExperience />
-		<ProfessionalSkills />
+	<div class="py-24 print:py-0">
+		<Paper>
+			<BasicInformation />
+			<JobExpectations />
+			<Education />
+			<WorkExperience />
+			<ProjectAndClubAndOrganizationExperience />
+			<ProfessionalSkills />
 
-		<a
-			href="https://github.com/Yue-plus"
-			target="_blank"
-			class="absolute right-12"
-		>
-			<Image
-				src={GitHub}
-				alt="Yue-plus 的 GitHub 主页二维码"
-				class="w-32 h-32"
-			/>
-		</a>
-	</Paper>
+			<a
+				href="https://github.com/Yue-plus"
+				target="_blank"
+				class="absolute right-12 bottom-14"
+			>
+				<Image
+					src={GitHub}
+					alt="Yue-plus 的 GitHub 主页二维码"
+					class="w-32 h-32"
+				/>
+			</a>
+		</Paper>
+	</div>
 </Layout>
