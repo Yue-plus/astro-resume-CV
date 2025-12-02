@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import ColorBar from "../../assets/background/color-bar.png";
 ---
 
-<header class="flex items-center gap-8 print:hidden">
+<header class="w-[210mm] flex items-center gap-8 print:hidden">
     <Image src={ColorBar} alt="color-bar" />
     <slot />
 </header>
