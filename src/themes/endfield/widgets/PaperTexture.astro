@@ -9,15 +9,15 @@ import DecoRT from "../assets/subpage-deco-rt.png";
 <Image
     src={DecoRT}
     alt="deco-rt"
-    class="absolute print:fixed right-0 top-0 select-none -z-1"
+    class="absolute right-0 top-0 select-none -z-1"
 />
 <Image
     src={DecoLB}
     alt="deco-lb"
-    class="absolute print:fixed left-0 bottom-0 select-none -z-1"
+    class="absolute left-0 bottom-0 select-none -z-1"
 />
 <footer
-    class="h-150 absolute print:fixed inset-x-0 bottom-0 opacity-8 select-none -z-1"
+    class="h-150 absolute right-0 left-0 bottom-0 opacity-8 select-none -z-1"
     style={{
         backgroundImage: `url(${PointsBG.src})`,
         maskImage:
@@ -27,6 +27,12 @@ import DecoRT from "../assets/subpage-deco-rt.png";
 >
 </footer>
 <NoticeDetailDecoLB
-    class="w-24 absolute print:fixed bottom-24 text-gray-500 select-none -z-1"
-    style="filter: drop-shadow(rgb(255, 255, 255) 0px 0px 0.25rem) drop-shadow(rgb(255, 255, 255) 0px 0px 0.5rem) drop-shadow(rgb(255, 255, 255) 0px 0px 0.5rem);"
+    class="w-24 absolute bottom-24 text-gray-500 select-none -z-1"
+    style={{
+        filter: `
+            drop-shadow(rgb(255, 255, 255) 0px 0px 0.25rem)
+            drop-shadow(rgb(255, 255, 255) 0px 0px 0.5rem)
+            drop-shadow(rgb(255, 255, 255) 0px 0px 0.5rem)
+        `,
+    }}
 />
