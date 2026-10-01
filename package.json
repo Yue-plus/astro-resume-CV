@@ -12,11 +12,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/ts-plugin": "^1.10.6",
-    "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.16.3",
+    "@astrojs/ts-plugin": "^1.10.12",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.5",
     "devicon": "^2.17.0",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.3.3"
   }
 }
