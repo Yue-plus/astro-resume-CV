@@ -1,11 +1,48 @@
 ---
 import { Image } from "astro:assets";
 import ColorBar from "../assets/color-bar.png";
+import GitHubIcon from "devicon/icons/github/github-original.svg";
 ---
 
 <header
     class="w-[210mm] flex items-center justify-between gap-8 bg-gray-50 shadow-xl print:hidden"
 >
     <Image src={ColorBar} alt="color-bar" />
-    <slot />
+    <a
+        target="_blank"
+        href="https://github.com/Yue-plus/astro-resume-CV"
+        class="text-lg font-bold text-center"
+    >
+        <GitHubIcon
+            class="w-16 h-16 hover:rotate-360 transition-all ease-in-out duration-500"
+        />
+    </a>
+    <div class="h-28.25 inline-flex items-stretch">
+        <div class="p-8 flex items-center">
+            注意在打印对话框中设置：
+            <br />
+            无边距；<wbr />不打印页眉页脚；<wbr />打印背景图形
+            <!-- <ul>
+                    <li>布局：纵向</li>
+                    <li>纸张大小：A4</li>
+                    <li>缩放：100%</li>
+                    <li>边距：无</li>
+                    <li>选项：不打印页眉页脚；打印背景图形</li>
+                </ul> -->
+        </div>
+        <a
+            target="_blank"
+            href="/print"
+            class="w-28.25 p-8 flex items-center lg:text-2xl font-bold bg-gray-200 hover:bg-end-yellow duration-150"
+        >
+            打印<br />简历
+        </a>
+        <a
+            target="_blank"
+            href="/刘悦阳的履历-全栈开发-20251202.pdf"
+            class="w-28.25 p-8 flex items-center lg:text-2xl font-bold bg-gray-200 hover:bg-end-yellow duration-150"
+        >
+            下载<br />PDF
+        </a>
+    </div>
 </header>

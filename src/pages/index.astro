@@ -7,62 +7,27 @@ import ProjectAndClubAndOrganizationExperience from "../themes/endfield/componen
 import QRcode from "../themes/endfield/components/QRcode.astro";
 import BodyTexture from "../themes/endfield/widgets/BodyTexture.astro";
 import Header from "../themes/endfield/widgets/Header.astro";
-import Paper from "../themes/endfield/widgets/Paper.astro";
+import PaperA4 from "../themes/endfield/widgets/PaperA4.astro";
 import WorkExperience from "../themes/endfield/components/WorkExperience.astro";
 import Layout from "../layouts/Layout.astro";
-import GitHubIcon from "devicon/icons/github/github-original.svg";
 ---
 
 <Layout lang="zh-Hans" title="刘悦阳的履历">
     <BodyTexture />
-    <Header>
-        <a
-            target="_blank"
-            href="https://github.com/Yue-plus/astro-resume-CV"
-            class="text-lg font-bold text-center"
-        >
-            <GitHubIcon
-                class="w-16 h-16 hover:rotate-360 transition-all ease-in-out duration-500"
-            />
-        </a>
-        <div class="h-[113px] inline-flex items-stretch">
-            <div class="p-8 flex items-center">
-                注意在打印对话框中设置：
-                <br />
-                无边距；<wbr />不打印页眉页脚；<wbr />打印背景图形
-                <!-- <ul>
-                    <li>布局：纵向</li>
-                    <li>纸张大小：A4</li>
-                    <li>缩放：100%</li>
-                    <li>边距：无</li>
-                    <li>选项：不打印页眉页脚；打印背景图形</li>
-                </ul> -->
-            </div>
-            <a
-                target="_blank"
-                href="/print"
-                class="w-[113px] p-8 flex items-center lg:text-2xl font-bold bg-gray-200 hover:bg-end-yellow duration-150"
-            >
-                打印<br />简历
-            </a>
-            <a
-                target="_blank"
-                href="/刘悦阳的履历-全栈开发-20251202.pdf"
-                class="w-[113px] p-8 flex items-center lg:text-2xl font-bold bg-gray-200 hover:bg-end-yellow duration-150"
-            >
-                下载<br />PDF
-            </a>
-        </div>
-    </Header>
-    <div class="lg:py-24 print:py-0">
-        <Paper>
+    <Header />
+    <div
+        class="lg:py-24 lg:flex lg:flex-row lg:justify-center lg:items-start gap-y-12 gap-x-36 lg:flex-wrap print:py-0"
+    >
+        <PaperA4>
             <BasicInformation />
             <JobExpectations />
             <Education />
             <WorkExperience />
+        </PaperA4>
+        <PaperA4>
             <ProjectAndClubAndOrganizationExperience />
             <ProfessionalSkills />
             <QRcode />
-        </Paper>
+        </PaperA4>
     </div>
 </Layout>
